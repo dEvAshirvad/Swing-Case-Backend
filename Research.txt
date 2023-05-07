@@ -1,0 +1,8 @@
+--------------------------
+NSE NIFTY 50 (Scraping)
+
+https://www.nseindia.com/market-data/live-equity-market?symbol=NIFTY%2050 //List of Nifty
+https://www.nseindia.com/get-quotes/equity?symbol=LT //Url for each stock
+--------------------------
+
+Rapid Api
