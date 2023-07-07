@@ -1,7 +1,19 @@
-const range = {
-    start: new Date("2023-05-03"),
-    end: new Date("2023-05-06")
+import { NseIndia } from "stock-nse-india"
+
+const nseIndia = new NseIndia();
+
+export async function getStockHistory(symbol, range) {
+    const Prices = await nseIndia.getEquityHistoricalData(symbol, range).then(data => {
+        const closePrices = []
+
+        data[0].data.map(e => {
+            closePrices.push(e.CH_CLOSING_PRICE)
+        })
+
+        return closePrices
+    })
+
+    return Prices
 }
-nseIndia.getEquityHistoricalData('IRCTC', range).then(data => {
-    console.log(data[0].data)
-})
+
+

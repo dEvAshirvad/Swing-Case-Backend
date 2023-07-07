@@ -12,7 +12,8 @@ export async function getStockByIndices(indices = "NIFTY 50") {
     for (let index = 1; index < 11; index++) {
         upto10.push({
             symbol: stockList.data[index].symbol,
-            close: stockList.data[index].previousClose
+            close: stockList.data[index].previousClose,
+            lastDay: stockList.data[index].lastUpdateTime.split(" ")[0]
         })
     }
 
